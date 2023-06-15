@@ -1,0 +1,14 @@
+on:
+  push:
+    branches: [ main ]
+    
+jobs:
+  List-Branches:
+    runs-on: ubuntu-latest
+    name: Job para listar Branches de repositório GitHub
+    steps:
+    - name: List Branches Docker Action
+      uses: geovanams/teste-action-docker@v1
+      with:
+        owner: geovanams
+        repo: public-repo
