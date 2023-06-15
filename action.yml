@@ -1,0 +1,21 @@
+#action.yml
+name: 'List Branches Action'
+description: 'Lista branches de um repositório público'
+branding:
+  icon: 'git-branch'
+  color: 'blue'
+inputs:
+  owner: # id do input
+    description: 'Sua organização ou usuário github'
+    required: true
+  repo: # id do input
+    description: 'Nome do repositório' # que possui as branches a serem listadas
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.owner }}
+    - ${{ inputs.repo }} 
+
+#image: 'docker://geovana10/list-branches-action:v1'
